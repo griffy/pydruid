@@ -118,7 +118,7 @@ class PyDruid:
             headers = {'Content-Type': 'application/json'}
             req = urllib.request.Request(url, querystr, headers)
             res = urllib.request.urlopen(req)
-            data = res.read()
+            data = res.read().decode('utf-8')
             self.result_json = data
             res.close()
         except urllib.error.HTTPError:
