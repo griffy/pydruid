@@ -127,7 +127,7 @@ class PyDruid:
             if e.code==500:
                 # has Druid returned an error?
                 try:
-                    err= json.loads(e.read())
+                    err= json.loads(e.read().decode('utf-8'))
                 except ValueError:
                     pass
                 else:
